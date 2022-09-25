@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <todo-message title="ToDo編集フォーム" content="さんのやること編集"> </todo-message>
+            <todo-message title="ToDo編集フォーム" :content='todo.user_name + "さんのやること"'> </todo-message>
             <form @submit.prevent="saveTodo">
 
                 <input name="id" :value="todo.id" type="hidden">

@@ -21,15 +21,14 @@ class TodoappController extends Controller
         //     $user = Auth::user(); //apiではAuth使えない
         $userId = $request->user()->id;
         if (isset($userId)) {
-            $todos = Todo::where('user_id', $userId)->paginate(3);
+        //   $todos = Todo::where('user_id', $userId)->paginate(3);
+            $todos = $request->user()->todos()->paginate(3);
         } else {
             $todos = [];
         }
-        $todos->userName = $request->user()->name;
-        // dd(TodoResource::collection($todos));
+
         return TodoResource::collection($todos);
         // return new TodoResource($todos);
-
     }
 
     /**
@@ -43,7 +42,7 @@ class TodoappController extends Controller
         $todo = new Todo;
         $form = $request->todo;
         $todo->user_id = $request->user()->id;
-//        unset($form['_token']);
+        //        unset($form['_token']);
         $todo->fill($form)->save();
         return response()->json([]);
     }
@@ -57,9 +56,10 @@ class TodoappController extends Controller
     public function show(Request $request, int $id)
     {
         $item = Todo::findOrFail($id);
+        // dd($item->user->name);
         return new TodoResource($item);
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -87,6 +87,6 @@ class TodoappController extends Controller
         Todo::destroy($id);
         return response()->json([
             "message" => "records deleted"
-          ]);
+        ]);
     }
 }

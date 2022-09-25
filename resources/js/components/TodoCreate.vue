@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <todo-message title="ToDo投稿フォーム" content="さんのやること登録"> </todo-message>
+            <todo-message title="ToDo投稿フォーム" content="やること登録"> </todo-message>
             <form @submit.prevent="saveTodo">
                 <div class="form-group">
                     <label for="title">

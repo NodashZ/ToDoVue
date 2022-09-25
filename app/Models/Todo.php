@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Todo extends Model
 {
@@ -11,4 +12,8 @@ class Todo extends Model
     
     protected $guarded = array('id');
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

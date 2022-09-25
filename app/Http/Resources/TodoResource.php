@@ -14,6 +14,8 @@ class TodoResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        $retList = parent::toArray($request);
+        $retList["user_name"] = $this->user->name;
+        return  $retList;
     }
 }

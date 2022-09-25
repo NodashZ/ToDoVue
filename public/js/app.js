@@ -2185,7 +2185,7 @@ var render = function render() {
   }, [_c("todo-message", {
     attrs: {
       title: "ToDo投稿フォーム",
-      content: "さんのやること登録"
+      content: "やること登録"
     }
   }), _vm._v(" "), _c("form", {
     on: {
@@ -2364,7 +2364,7 @@ var render = function render() {
   }, [_c("todo-message", {
     attrs: {
       title: "ToDo編集フォーム",
-      content: "さんのやること編集"
+      content: _vm.todo.user_name + "さんのやること"
     }
   }), _vm._v(" "), _c("form", {
     on: {
@@ -2544,7 +2544,7 @@ var render = function render() {
   return _c("div", [_c("todo-message", {
     attrs: {
       title: "ToDo一覧",
-      content: "さんのやることリスト"
+      content: _vm.todos.data[0].user_name + "さんのやること"
     }
   }), _vm._v(" "), _c("table", {
     staticClass: "table table-striped"
@@ -51294,8 +51294,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/nohsyu/work/todoappVue/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/nohsyu/work/todoappVue/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/nohsyu/work/ToDoVue/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/nohsyu/work/ToDoVue/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
