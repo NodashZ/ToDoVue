@@ -2544,7 +2544,7 @@ var render = function render() {
   return _c("div", [_c("todo-message", {
     attrs: {
       title: "ToDo一覧",
-      content: _vm.todos.data[0].user_name + "さんのやること"
+      content: _vm.todos.user.name + "さんのやること"
     }
   }), _vm._v(" "), _c("table", {
     staticClass: "table table-striped"

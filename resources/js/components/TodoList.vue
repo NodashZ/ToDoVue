@@ -1,6 +1,6 @@
 <template>
     <div>
-        <todo-message title="ToDo一覧" :content='todos.data[0].user_name + "さんのやること"'> </todo-message>
+        <todo-message title="ToDo一覧" :content='todos.user.name + "さんのやること"'> </todo-message>
         <table class="table table-striped">
             <tr>
                 <th>タイトル</th>

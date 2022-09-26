@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Todo;
-use Illuminate\Support\Facades\Auth;
 use App\http\Resources\TodoResource;
-use App\Http\Requests\TodoRequest;
+use App\http\Resources\TodoCollection;
 
 
 class TodoappController extends Controller
@@ -27,8 +26,8 @@ class TodoappController extends Controller
             $todos = [];
         }
 
-        return TodoResource::collection($todos);
-        // return new TodoResource($todos);
+        // return TodoResource::collection($todos);
+        return new TodoCollection($todos);
     }
 
     /**
