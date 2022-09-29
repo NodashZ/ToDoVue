@@ -17,11 +17,15 @@ class TodoappController extends Controller
      */
     public function index(Request $request)
     {
-        //     $user = Auth::user(); //apiではAuth使えない
+        $sort = $request->sort;
         $userId = $request->user()->id;
         if (isset($userId)) {
-        //   $todos = Todo::where('user_id', $userId)->paginate(3);
-            $todos = $request->user()->todos()->paginate(3);
+            // $todos = $request->user()->todos()->paginate(3);
+            $todos = $request->user()->todos();
+            if (isset($sort)) {
+                $todos = $todos->orderBy($sort, 'asc');
+            }
+            $todos = $todos->paginate(3);
         } else {
             $todos = [];
         }
